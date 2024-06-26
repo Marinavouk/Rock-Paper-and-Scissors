@@ -4,7 +4,7 @@ bool Window::Create()
 {
 	const int WIDTH = 1280;
 	const int HEIGHT = 720;
-
+	window = SDL_CreateWindow("Rock,Paper & Scissors", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
 	if (!window)
 	{
 		std::cout << "Error: failed to create SDL window! " << SDL_GetError();
