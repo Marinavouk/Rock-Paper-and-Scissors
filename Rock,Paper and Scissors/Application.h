@@ -1,9 +1,14 @@
 #pragma once
 
-#include "Window.h"
+#include "AudioHandler.h"
+
 #include "Game.h"
-#include <SDL_mixer.h>
-#include <SDL_ttf.h>
+#include "InputHandler.h"
+#include "LibraryHandler.h"
+#include "TextureHandler.h"
+
+#include "Window.h"
+
 
 
 
@@ -22,9 +27,54 @@ public:
     void Render();
     void Quit() { running = false; }
 
+    Window* GetWindow() { return window; }
+
+    TextureHandler* GetTextureHandler() { return textureHandler; }
+
+    
+
+    AudioHandler* GetAudioHandler() { return audioHandler; }
+
+    InputHandler* GetInputHandler() { return inputhandler; }
+
+    TTF_Font* GetFont() { return font; }
+    TTF_Font* GetNameFont() { return nameFont; }
+    TTF_Font* GetCreditsFont() { return creditsFont; }
+
+
 private:
-    Window* window;
-    Game* game;
-    bool running;
+private:
+
+	SDL_Texture* gameOver = nullptr;
+
+	SDL_Texture* start = nullptr;
+
+	LibraryHandler* libraryHandler = nullptr;
+
+	Window* window = nullptr;
+
+	TextureHandler* textureHandler = nullptr;
+
+	AudioHandler* audioHandler = nullptr;
+
+	Mix_Music* menuMusic = nullptr;
+
+	Mix_Music* gameMusic = nullptr;
+
+	Mix_Music* gameOverMusic = nullptr;
+
+	InputHandler* inputhandler = nullptr;
+
+	Game* game = nullptr;
+
+	TTF_Font* font = nullptr;
+
+	TTF_Font* nameFont = nullptr;
+
+	TTF_Font* creditsFont = nullptr;
+
+	bool running = true;
+
+	bool gameOverMusicPlaying = false;
 };
 

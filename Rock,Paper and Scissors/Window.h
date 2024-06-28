@@ -17,6 +17,13 @@ public:
 	void BeginRender();
 	void EndRender();
 
+	void RenderText(TTF_Font* font, const std::string& text, const float xPosition, const float yPosition, const SDL_Color& color);
+
+	SDL_Renderer* GetRenderer() { return renderer; }
+
+	int GetWidth() { return width; }
+	int GetHeight() { return height; }
+
 private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
