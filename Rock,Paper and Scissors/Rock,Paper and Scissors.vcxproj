@@ -151,6 +151,7 @@
     <ClCompile Include="AudioHandler.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="LibraryHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="AudioHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="LibraryHandler.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TextureHandler.h" />
     <ClInclude Include="Window.h" />
