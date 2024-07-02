@@ -7,4 +7,6 @@ class InputHandler
 public:
 	InputHandler();
 	~InputHandler();
+
+	void Update();
 };
