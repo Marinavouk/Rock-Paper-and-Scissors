@@ -15,13 +15,6 @@ bool Application::Create()
 	if (!textureHandler->Create(window->GetRenderer()))
 		return false;
 
-	start = GetTextureHandler()->CreateTexture("Assets/Textures/backgroundMenu.png");
-	if (!start)
-	{
-		std::cout << "Failed to load gameOver texture." << std::endl;
-		return false;
-	}
-
 	game = new Game;
 	if (!game->Create(this))
 		return false;
@@ -36,8 +29,6 @@ void Application::Destroy()
 {
 	game->Destroy();
 	delete game;
-
-	GetTextureHandler()->DestroyTexture(start);
 
 	textureHandler->Destroy();
 	delete textureHandler;

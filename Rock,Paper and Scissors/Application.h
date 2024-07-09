@@ -42,7 +42,7 @@ public:
     TTF_Font* GetCreditsFont() { return creditsFont; }
 
 
-private:
+
 private:
 
 	SDL_Texture* gameOver = nullptr;
