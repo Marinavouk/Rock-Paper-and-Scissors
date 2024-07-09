@@ -25,7 +25,7 @@ bool Window::Create()
 	height = HEIGHT;
 
 	return true;
-}
+}////////
 
 void Window::Destroy()
 {
