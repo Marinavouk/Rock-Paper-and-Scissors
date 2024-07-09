@@ -1,5 +1,4 @@
 #include "Game.h"
-
 #include "Application.h"
 
 bool Game::Create(Application* mainApplication)
