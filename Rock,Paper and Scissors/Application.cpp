@@ -78,4 +78,8 @@ void Application::Update()
 void Application::Render()
 {
 	window->BeginRender();
+
+	game->Render(window->GetRenderer());
+
+	window->EndRender();
 }
