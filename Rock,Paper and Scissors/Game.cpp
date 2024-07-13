@@ -4,7 +4,6 @@
 bool Game::Create(Application* mainApplication)
 {
 	application = mainApplication;
-	std::cout << "Background is loading";
 	background = application->GetTextureHandler()->CreateTexture("Assets/Textures/backgroundMenu.png");
 	if (!background)
 		return false;
