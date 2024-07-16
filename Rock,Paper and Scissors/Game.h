@@ -22,4 +22,6 @@ private:
 
 	Application* application = nullptr;
 	SDL_Texture* background = nullptr;
+
+	SDL_Texture* startButton = nullptr;
 };
