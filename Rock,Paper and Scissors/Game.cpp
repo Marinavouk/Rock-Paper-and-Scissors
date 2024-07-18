@@ -8,7 +8,7 @@ bool Game::Create(Application* mainApplication)
 	if (!background)
 		return false;
 
-	startButton = application->GetTextureHandler()->CreateTexture("Assets/Textures/rock.png");
+	startButton = application->GetTextureHandler()->CreateTexture("Assets/Textures/start-button.png");
 	if (!startButton)
 		return false;
 
