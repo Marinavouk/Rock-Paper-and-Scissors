@@ -1,24 +1,57 @@
 #include "Button.h"
+#include "TextureHandler.h"
 
-Button::Button()
+Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_SPRITE_MOUSE_OUT)
 {
-	mPosition.x = 0;
-	mPosition.y = 0;
-
-	mCurrentSprite = BUTTON_SPRITE_MOUSE_OUT;
+	buttonRec.h = BUTTON_HEIGHT;
+	buttonRec.w = BUTTON_WIDTH;
+	
 }
 
 void Button::setLocation (int xPos, int yPos)
 {
 	mPosition.x = xPos;
 	mPosition.y = yPos;
+	buttonRec.x = xPos;
+	buttonRec.y = yPos;
+
+
+void Button::render(SDL_Render* renderer)
+{
+    if (texture)
+    {
+        SDL_RenderCopy(renderer, texture, nullptr, &buttonRect);
+    }
 }
 
-void Button::setEvent(SDL_Event* mouseEvent)
+bool Button::setEvent(SDL_Event* mouseEvent)
 {
-	if (mouseEvent->type == BUTTON_SPRITE_MOUSE_OVER_MOTION || mouseEvent->type == BUTTON_SPRITE_MOUSE_DOWN || mouseEvent->type == BUTTON_SPRITE_MOUSE_UP)
-	{
-		int mpX, mpY;
-		SDL_GetMouseState(&mpX, &mpY);
-	}
+    bool inside = true;
+    int x, y;
+    SDL_GetMouseState(&x, &y);
+
+    if (x < mPosition.x || x > mPosition.x + BUTTON_WIDTH || y < mPosition.y || y > mPosition.y + BUTTON_HEIGHT)
+    {
+        inside = false;
+    }
+
+    if (!inside)
+    {
+        mCurrentSprite = BUTTON_SPRITE_MOUSE_OUT;
+    }
+    else
+    {
+        switch (mouseEvent->type)
+        {
+        case SDL_MOUSEBUTTONDOWN:
+            // Add button click handling code here
+            return true;
+        default:
+            break;
+        }
+    }
+    return false;
+
 }
+
+
