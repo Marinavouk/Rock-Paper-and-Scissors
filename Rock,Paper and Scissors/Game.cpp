@@ -33,7 +33,7 @@ bool Game::CreateButton(Button* startGame)
 		return false;
 
 	startButton->setTexture(startButtonTexture);
-	startButton->setLocation(100, 100);
+	startButton->setLocation(480, 500);
 
 	
 	return true;
@@ -56,7 +56,10 @@ void Game::Update(const float deltaTime)
 void Game::Render(SDL_Renderer* renderer)
 {
 	SDL_RenderCopyF(renderer, background, nullptr, nullptr);
-	SDL_RenderCopyF(renderer, startButtonTexture, nullptr, nullptr);
+	if (startButton)
+	{
+		startButton->render(renderer);
+	}
 }
 
 void Game::HandleEvents(SDL_Event* handleEvent) 
