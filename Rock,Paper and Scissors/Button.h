@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "Game.h"
 #include <SDL.h>
 
 
@@ -22,6 +22,7 @@ class Button
 
 public:
 	Button();
+	
 
 	void render(SDL_Renderer* renderer);
 	void setLocation(int xPos, int yPos);
@@ -33,6 +34,6 @@ private:
 	SDL_Point mPosition;
 	ButtonSprite mCurrentSprite;
 	SDL_Rect buttonRec;
-	SDL_Texture* texture;
+	SDL_Texture* texture = nullptr;
 
 };

@@ -8,20 +8,25 @@ Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_SPRITE_MOUSE_OUT)
 	
 }
 
-void Button::setLocation (int xPos, int yPos)
+void Button::setLocation(int xPos, int yPos)
 {
-	mPosition.x = xPos;
-	mPosition.y = yPos;
-	buttonRec.x = xPos;
-	buttonRec.y = yPos;
+    mPosition.x = xPos;
+    mPosition.y = yPos;
+    buttonRec.x = xPos;
+    buttonRec.y = yPos;
+}
 
-
-void Button::render(SDL_Render* renderer)
+void Button::render(SDL_Renderer* renderer)
 {
     if (texture)
     {
-        SDL_RenderCopy(renderer, texture, nullptr, &buttonRect);
+        SDL_RenderCopy(renderer, texture, nullptr, &buttonRec);
     }
+}
+
+void Button::setTexture(SDL_Texture* texture)
+{
+    this->texture = texture;
 }
 
 bool Button::setEvent(SDL_Event* mouseEvent)
