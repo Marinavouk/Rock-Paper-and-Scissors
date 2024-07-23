@@ -56,10 +56,18 @@ void Game::Update(const float deltaTime)
 
 void Game::Render(SDL_Renderer* renderer)
 {
-	SDL_RenderCopyF(renderer, background, nullptr, nullptr);
-	if (startButton)
+	if (gameState == STATE_MENU)
 	{
-		startButton->render(renderer);
+		SDL_RenderCopyF(renderer, background, nullptr, nullptr);
+		if (startButton)
+		{
+			startButton->render(renderer);
+		}
+	}
+	if (gameState == STATE_PLAYING)
+	{
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderClear(renderer);
 	}
 }
 
