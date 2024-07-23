@@ -1,12 +1,12 @@
 #pragma once
-
-
 #include <SDL.h>
 
 // Forward-declaring application to avoid multiple inclusion issue
 class Application;
 
 class Button;
+
+enum GameState { STATE_MENU, STATE_PLAYING };
 
 class Game
 {
@@ -28,4 +28,5 @@ private:
 	SDL_Texture* background = nullptr;
 	Button* startButton = nullptr;
 	SDL_Texture* startButtonTexture = nullptr;
+	GameState gameState = STATE_MENU;
 };

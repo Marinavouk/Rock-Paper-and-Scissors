@@ -3,6 +3,7 @@
 #include "Button.h"
 #include "SDL_image.h"
 
+
 bool Game::Create(Application* mainApplication)
 {
 	application = mainApplication;
