@@ -8,9 +8,11 @@ class Button
 	const int BUTTON_WIDTH = 300;
 	const int BUTTON_HEIGHT = 100;
 
-	enum ButtonSprite
+	enum ButtonState
 	{
-		BUTTON_SPRITE_MOUSE_OUT = 0
+		BUTTON_NORMAL = 0,
+		HOVER = 1,
+		PRESSED = 2
 	};
 
 public:
@@ -22,7 +24,7 @@ public:
 
 private:
 	SDL_Point mPosition;
-	ButtonSprite mCurrentSprite;
+	ButtonState mCurrentSprite;
 	SDL_Rect buttonRec;
 	SDL_Texture* texture = nullptr;
 };

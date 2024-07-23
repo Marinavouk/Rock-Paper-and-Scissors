@@ -1,7 +1,7 @@
 #include "Button.h"
 #include "TextureHandler.h"
 
-Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_SPRITE_MOUSE_OUT)
+Button::Button() : texture(nullptr), mCurrentSprite(PRESSED)
 {
 	buttonRec.h = BUTTON_HEIGHT;
 	buttonRec.w = BUTTON_WIDTH;
@@ -42,13 +42,13 @@ bool Button::setEvent(SDL_Event* mouseEvent)
 
     if (!inside)
     {
-        mCurrentSprite = BUTTON_SPRITE_MOUSE_OUT;
+        mCurrentSprite = BUTTON_NORMAL;
     }
     else
     {
         switch (mouseEvent->type)
         {
-        case SDL_MOUSEBUTTONDOWN:
+        case PRESSED:
             // Add button click handling code here
             return true;
         default:
