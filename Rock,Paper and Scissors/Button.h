@@ -10,7 +10,7 @@ class Button
 
 	enum ButtonState
 	{
-		BUTTON_NORMAL = 0,
+		BUTTON_NEUTRAL = 0,
 		HOVER = 1,
 		PRESSED = 2
 	};

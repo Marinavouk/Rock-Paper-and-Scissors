@@ -42,7 +42,7 @@ bool Button::setEvent(SDL_Event* mouseEvent)
 
     if (!inside)
     {
-        mCurrentSprite = BUTTON_NORMAL;
+        mCurrentSprite = BUTTON_NEUTRAL;
     }
     else
     {
