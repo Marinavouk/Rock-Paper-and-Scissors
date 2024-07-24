@@ -1,7 +1,7 @@
 #include "Button.h"
 #include "TextureHandler.h"
 
-Button::Button() : texture(nullptr), mCurrentSprite(PRESSED)
+Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_NEUTRAL)
 {
 	buttonRec.h = BUTTON_HEIGHT;
 	buttonRec.w = BUTTON_WIDTH;
@@ -42,7 +42,7 @@ bool Button::setEvent(SDL_Event* mouseEvent)
 
     if (!inside)
     {
-        mCurrentSprite = BUTTON_NEUTRAL;
+        mCurrentSprite = PRESSED;
     }
     else
     {
@@ -58,5 +58,6 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     return false;
 
 }
+
 
 

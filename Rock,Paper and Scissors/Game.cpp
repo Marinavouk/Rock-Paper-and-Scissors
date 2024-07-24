@@ -62,6 +62,7 @@ void Game::Render(SDL_Renderer* renderer)
 		if (startButton)
 		{
 			startButton->render(renderer);
+			
 		}
 	}
 	if (gameState == STATE_PLAYING)
@@ -75,8 +76,14 @@ void Game::Render(SDL_Renderer* renderer)
 
 void Game::HandleEvents(SDL_Event* handleEvent) 
 {
-	if (startButton->setEvent(handleEvent))
+	if (gameState == STATE_MENU) 
 	{
-		std::cout << "Start button clicked";
+		std::cout << "State menu";
+		if (startButton)
+		{
+			std::cout << "Start button clicked";
+			gameState = STATE_PLAYING;
+		}
 	}
+	
 }
