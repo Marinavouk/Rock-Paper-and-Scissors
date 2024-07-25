@@ -61,7 +61,8 @@ void Application::HandleEvents()
 		case SDL_MOUSEBUTTONDOWN:
 		{
 			std::cout << "Button clicked";
-			game->HandleEvents(&event);
+			//game->HandleEvents(&event);
+			button->setEvent(&event);
 
 			break;
 		}

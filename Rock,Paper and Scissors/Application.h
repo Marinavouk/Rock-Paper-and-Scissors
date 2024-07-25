@@ -6,7 +6,7 @@
 #include "InputHandler.h"
 #include "LibraryHandler.h"
 #include "TextureHandler.h"
-
+#include "Button.h"
 #include "Window.h"
 
 
@@ -66,6 +66,7 @@ private:
 	InputHandler* inputhandler = nullptr;
 
 	Game* game = nullptr;
+    Button* button = nullptr;
 
 	TTF_Font* font = nullptr;
 
