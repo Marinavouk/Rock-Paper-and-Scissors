@@ -17,6 +17,7 @@ class Button
 
 public:
 	Button();
+	~Button() {};
 	void render(SDL_Renderer* renderer);
 	void setLocation(int xPos, int yPos);
 	void setTexture(SDL_Texture* texture);
