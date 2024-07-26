@@ -3,6 +3,8 @@
 
 Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_NEUTRAL)
 {
+    mPosition.x = 0;
+    mPosition.y = 0;
 	buttonRec.h = BUTTON_HEIGHT;
 	buttonRec.w = BUTTON_WIDTH;
 	
@@ -34,28 +36,37 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     bool inside = true;
     int x, y;
     SDL_GetMouseState(&x, &y);
-
-    if (x < mPosition.x || x > mPosition.x + BUTTON_WIDTH || y < mPosition.y || y > mPosition.y + BUTTON_HEIGHT)
-    {
-        inside = false;
-    }
-
-    if (!inside)
-    {
-        mCurrentSprite = PRESSED;
-    }
-    else
-    {
-        switch (mouseEvent->type)
+    
+        if (x < mPosition.x || x > mPosition.x + BUTTON_WIDTH || y < mPosition.y || y > mPosition.y + BUTTON_HEIGHT)
         {
-        case PRESSED:
-            // Add button click handling code here
-            return true;
-        default:
-            break;
+            mCurrentSprite = BUTTON_NEUTRAL;
+            inside = false;
+
         }
-    }
+
+        if (!inside)
+        {
+            mCurrentSprite = PRESSED;
+        }
+        else
+        {
+            switch (mouseEvent->type)
+            {
+            case PRESSED:
+                // Add button click handling code here
+                return true;
+            case HOVER:
+                return true;
+
+            default:
+                break;
+            }
+        }
+    
+    
     return false;
+    
+
 
 }
 
