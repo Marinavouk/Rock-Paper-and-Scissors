@@ -1,5 +1,6 @@
 #include "Button.h"
 #include "TextureHandler.h"
+#include "Game.h"
 
 Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_NEUTRAL)
 {
@@ -53,6 +54,7 @@ bool Button::setEvent(SDL_Event* mouseEvent)
             switch (mouseEvent->type)
             {
             case PRESSED:
+                game->HandleEvents(mouseEvent);
                 // Add button click handling code here
                 return true;
             case HOVER:

@@ -28,4 +28,5 @@ private:
 	ButtonState mCurrentSprite;
 	SDL_Rect buttonRec;
 	SDL_Texture* texture = nullptr;
+	Game* game;
 };
