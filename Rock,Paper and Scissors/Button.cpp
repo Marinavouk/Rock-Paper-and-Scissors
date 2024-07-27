@@ -38,7 +38,27 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     int x, y;
     SDL_GetMouseState(&x, &y);
     
-        if (x < mPosition.x || x > mPosition.x + BUTTON_WIDTH || y < mPosition.y || y > mPosition.y + BUTTON_HEIGHT)
+    if (mouseEvent->type == HOVER || mouseEvent->type == PRESSED)
+    {
+        if (x < mPosition.x)
+        {
+            mCurrentSprite = BUTTON_NEUTRAL;
+            inside = false;
+
+        }
+        else if (x > mPosition.x + buttonRec.w)
+        {
+            mCurrentSprite = BUTTON_NEUTRAL;
+            inside = false;
+
+        }
+        else if (y < mPosition.y)
+        {
+            mCurrentSprite = BUTTON_NEUTRAL;
+            inside = false;
+
+        }
+        else if (y > mPosition.y + buttonRec.h)
         {
             mCurrentSprite = BUTTON_NEUTRAL;
             inside = false;
@@ -64,7 +84,9 @@ bool Button::setEvent(SDL_Event* mouseEvent)
                 break;
             }
         }
+    }
     
+
     
     return false;
     
