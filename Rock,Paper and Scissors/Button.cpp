@@ -38,7 +38,7 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     int x, y;
     SDL_GetMouseState(&x, &y);
     
-    if (mouseEvent->type == HOVER || mouseEvent->type == PRESSED)
+    if (mouseEvent->type == SDL_MOUSEBUTTONDOWN || mouseEvent->type == SDL_MOUSEBUTTONUP)
     {
         if (x < mPosition.x)
         {
