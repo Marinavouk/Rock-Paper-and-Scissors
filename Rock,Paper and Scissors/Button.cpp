@@ -37,6 +37,7 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     bool inside = true;
     int x, y;
     SDL_GetMouseState(&x, &y);
+    setLocation(x, y);
     
     if (mouseEvent->type == SDL_MOUSEBUTTONDOWN || mouseEvent->type == SDL_MOUSEBUTTONUP)
     {
