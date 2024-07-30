@@ -21,6 +21,7 @@ public:
 	void Update(const float deltaTime);
 	void Render(SDL_Renderer* renderer);
 	void HandleEvents(SDL_Event* handleEvent);
+	void DrawFrame(SDL_Renderer* renderer);
 
 private:
 
