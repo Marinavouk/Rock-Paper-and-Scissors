@@ -4,26 +4,26 @@
 
 Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_NEUTRAL)
 {
-    mPosition.x = 0;
-    mPosition.y = 0;
-	buttonRec.h = BUTTON_HEIGHT;
-	buttonRec.w = BUTTON_WIDTH;
+    pointPosition.x = 0;
+    pointPosition.y = 0;
+	buttonRect.h = BUTTON_HEIGHT;
+	buttonRect.w = BUTTON_WIDTH;
 	
 }
 
 void Button::setLocation(int xPos, int yPos)
 {
-    mPosition.x = xPos;
-    mPosition.y = yPos;
-    buttonRec.x = xPos;
-    buttonRec.y = yPos;
+    pointPosition.x = xPos;
+    pointPosition.y = yPos;
+    buttonRect.x = xPos;
+    buttonRect.y = yPos;
 }
 
 void Button::render(SDL_Renderer* renderer)
 {
     if (texture)
     {
-        SDL_RenderCopy(renderer, texture, nullptr, &buttonRec);
+        SDL_RenderCopy(renderer, texture, nullptr, &buttonRect);
     }
 }
 
@@ -41,25 +41,25 @@ bool Button::setEvent(SDL_Event* mouseEvent)
     
     if (mouseEvent->type == SDL_MOUSEBUTTONDOWN || mouseEvent->type == SDL_MOUSEBUTTONUP)
     {
-        if (x < mPosition.x)
+        if (x < pointPosition.x)
         {
             mCurrentSprite = BUTTON_NEUTRAL;
             inside = false;
 
         }
-        else if (x > mPosition.x + buttonRec.w)
+        else if (x > pointPosition.x + buttonRect.w)
         {
             mCurrentSprite = BUTTON_NEUTRAL;
             inside = false;
 
         }
-        else if (y < mPosition.y)
+        else if (y < pointPosition.y)
         {
             mCurrentSprite = BUTTON_NEUTRAL;
             inside = false;
 
         }
-        else if (y > mPosition.y + buttonRec.h)
+        else if (y > pointPosition.y + buttonRect.h)
         {
             mCurrentSprite = BUTTON_NEUTRAL;
             inside = false;

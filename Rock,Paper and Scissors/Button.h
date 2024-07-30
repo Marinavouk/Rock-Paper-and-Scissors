@@ -24,9 +24,9 @@ public:
 	bool setEvent(SDL_Event* mouseEvent);
 
 private:
-	SDL_Point mPosition;
+	SDL_Point pointPosition;
 	ButtonState mCurrentSprite;
-	SDL_Rect buttonRec;
+	SDL_Rect buttonRect;
 	SDL_Texture* texture = nullptr;
 	Game* game;
 };
