@@ -154,6 +154,7 @@
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="LibraryHandler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Movement.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="LibraryHandler.h" />
+    <ClInclude Include="Movement.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TextureHandler.h" />
     <ClInclude Include="Window.h" />
