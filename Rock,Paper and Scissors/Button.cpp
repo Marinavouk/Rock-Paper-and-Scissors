@@ -6,6 +6,8 @@ Button::Button() : texture(nullptr), mCurrentSprite(BUTTON_NEUTRAL)
 {
     pointPosition.x = 0;
     pointPosition.y = 0;
+    buttonRect.x = 0;
+    buttonRect.y = 0;
 	buttonRect.h = BUTTON_HEIGHT;
 	buttonRect.w = BUTTON_WIDTH;
 	
