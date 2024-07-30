@@ -91,7 +91,8 @@ void Game::HandleEvents(SDL_Event* handleEvent)
 
 void Game::DrawFrame(SDL_Renderer* renderer)
 {
-	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_Rect frameRect = { 10, 10, application->GetWindow()->GetWidth() - 20, application->GetWindow()->GetHeight() - 20 };
+	const int thickness = 20;
+	SDL_SetRenderDrawColor(renderer, 255, 100, 200, 255);
+	SDL_Rect frameRect = { 60, 80, application->GetWindow()->GetWidth() - 120, application->GetWindow()->GetHeight() - 120 };
 	SDL_RenderDrawRect(renderer, &frameRect);
 }
