@@ -44,4 +44,58 @@ Here are some screenshots demonstrating the game in action:
 - **Enhanced Graphics**: Improve the visual representation of the entities and add animations.
 - **AI Behavior**: Introduce more complex behaviors and strategies for entity movement.
 
+# Button Class Documentation
+
+The `Button` class is designed to manage a clickable button in an SDL-based game. This documentation provides an overview of its members and methods.
+
+## Class Members
+
+### `Button::Button()`
+The constructor initializes a `Button` object with default values:
+- `texture`: Set to `nullptr`.
+- `mCurrentSprite`: Initialized to `BUTTON_NEUTRAL`.
+- `pointPosition`: A struct to hold the x and y coordinates of the button, initialized to (0, 0).
+- `buttonRect`: An SDL_Rect structure to define the button's position and size on the screen, initialized to (0, 0, BUTTON_WIDTH, BUTTON_HEIGHT).
+
+### `void Button::setLocation(int xPos, int yPos)`
+This method sets the button's position on the screen:
+- `xPos`: The x-coordinate where the button is placed.
+- `yPos`: The y-coordinate where the button is placed.
+
+### `void Button::render(SDL_Renderer* renderer)`
+This method renders the button on the screen:
+- `renderer`: The SDL_Renderer used to draw the button.
+- If `texture` is not `nullptr`, the texture is rendered using `SDL_RenderCopy`.
+
+### `void Button::setTexture(SDL_Texture* texture)`
+This method sets the texture for the button:
+- `texture`: An SDL_Texture to be used as the button's image.
+
+### `bool Button::setEvent(SDL_Event* mouseEvent)`
+This method handles mouse events for the button and determines if the button has been clicked:
+- `mouseEvent`: A pointer to an SDL_Event structure containing the event data.
+- Returns `true` if the button was pressed or hovered, `false` otherwise.
+
+#### Detailed Behavior:
+1. **Get Mouse State:**
+   - Retrieves the current position of the mouse cursor and updates the button's location.
+2. **Check Event Type:**
+   - If the event is `SDL_MOUSEBUTTONDOWN` or `SDL_MOUSEBUTTONUP`, it checks if the mouse cursor is inside the button's boundaries.
+3. **Boundary Check:**
+   - If the cursor is outside the button's boundaries, `mCurrentSprite` is set to `BUTTON_NEUTRAL` and `inside` is set to `false`.
+4. **Event Handling:**
+   - If the cursor is inside the button's boundaries:
+     - If the event type is `PRESSED`, it calls `game->HandleEvents(mouseEvent)` and returns `true`.
+     - If the event type is `HOVER`, it returns `true`.
+   - If the cursor is outside the button's boundaries, `mCurrentSprite` is set to `PRESSED`.
+
+## Dependencies
+The `Button` class depends on the following:
+- `SDL.h`: The SDL library header for handling rendering and events.
+- `Button.h`: The header file for the `Button` class.
+- `TextureHandler.h`: For managing textures.
+- `Game.h`: For handling game-specific events.
+
+Ensure these dependencies are included in your project to use the `Button` class effectively.
+
 
