@@ -58,10 +58,10 @@ rock-paper-scissors-sdl/
 
 Here are some screenshots demonstrating the game in action:
 
-![Screenshot 1](assets/screenshot1.png)
+![Screenshot 1](https://github.com/Marinavouk/Rock-Paper-and-Scissors/blob/main/Screenshot%202024-08-07%20133551.png)
 *Initial spawn of Rock, Paper, and Scissors.*
 
-![Screenshot 2](assets/screenshot2.png)
+![Screenshot 2](https://github.com/Marinavouk/Rock-Paper-and-Scissors/blob/main/Screenshot%202024-08-07%20133715.png)
 *Entities moving and colliding.*
 
 ## Future Enhancements
