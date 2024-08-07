@@ -26,32 +26,6 @@ The game creates an endless cycle of transformation, visually demonstrating the 
 - **Dynamic Interaction**: Real-time collision detection and transformation between entities.
 - **Simple and Clean Code Structure**: The project follows clean coding principles with each class and functionality separated into individual header (`.h`) and implementation (`.cpp`) files.
 
-## Project Structure
-
-The project is organized to maintain clean, readable, and maintainable code. Here is an overview of the structure:
-
-rock-paper-scissors-sdl/
-├── bin/
-│ └── game # Executable file
-├── build/ # Build files
-├── include/ # Header files
-│ ├── Game.h               # Game loop and SDL initialization
-│ ├── Rock.h               # Rock entity
-│ ├── Paper.h              # Paper entity
-│ ├── Scissors.h           # Scissors entity
-│ └── Entity.h             # Base class for all entities
-├── src/ # Source files
-│ ├── Game.cpp             # Game loop and SDL initialization
-│ ├── Rock.cpp             # Rock entity implementation
-│ ├── Paper.cpp            # Paper entity implementation
-│ ├── Scissors.cpp         # Scissors entity implementation
-│ └── Entity.cpp           # Base class implementation
-├── assets/                # Game assets
-│ ├── rock.png             # Rock image
-│ ├── paper.png            # Paper image
-│ └── scissors.png         # Scissors image
-├── Makefile # Build script
-└── README.md # Project presentation
 
 
 ## Screenshots
