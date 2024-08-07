@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL.h>
+#include "Movement.h"
+#include <vector>
 
 // Forward-declaring application to avoid multiple inclusion issue
 class Application;
@@ -30,4 +32,5 @@ private:
 	Button* startButton = nullptr;
 	SDL_Texture* startButtonTexture = nullptr;
 	GameState gameState = STATE_MENU;
+	std::<Movement> movement;
 };
