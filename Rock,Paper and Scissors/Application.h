@@ -33,13 +33,13 @@ public:
 
     
 
-    AudioHandler* GetAudioHandler() { return audioHandler; }
+    //AudioHandler* GetAudioHandler() { return audioHandler; } use later
 
     InputHandler* GetInputHandler() { return inputhandler; }
 
-    TTF_Font* GetFont() { return font; }
-    TTF_Font* GetNameFont() { return nameFont; }
-    TTF_Font* GetCreditsFont() { return creditsFont; }
+    //TTF_Font* GetFont() { return font; }
+    //TTF_Font* GetNameFont() { return nameFont; }
+    //TTF_Font* GetCreditsFont() { return creditsFont; }
 
 
 
@@ -47,7 +47,7 @@ private:
 
 	SDL_Texture* gameOver = nullptr;
 
-	SDL_Texture* start = nullptr;
+	//SDL_Texture* start = nullptr;
 
 	LibraryHandler* libraryHandler = nullptr;
 
@@ -55,24 +55,24 @@ private:
 
 	TextureHandler* textureHandler = nullptr;
 
-	AudioHandler* audioHandler = nullptr;
+	//AudioHandler* audioHandler = nullptr;
 
-	Mix_Music* menuMusic = nullptr;
+	//Mix_Music* menuMusic = nullptr;
 
-	Mix_Music* gameMusic = nullptr;
+	//Mix_Music* gameMusic = nullptr;
 
-	Mix_Music* gameOverMusic = nullptr;
+	//Mix_Music* gameOverMusic = nullptr;
 
-	InputHandler* inputhandler = nullptr;
+	//InputHandler* inputhandler = nullptr;
 
 	Game* game = nullptr;
     Button* button = nullptr;
 
-	TTF_Font* font = nullptr;
+	//TTF_Font* font = nullptr;
 
-	TTF_Font* nameFont = nullptr;
+	//TTF_Font* nameFont = nullptr;
 
-	TTF_Font* creditsFont = nullptr;
+	//TTF_Font* creditsFont = nullptr;
 
 	bool running = true;
 
