@@ -63,7 +63,7 @@ private:
 
 	//Mix_Music* gameOverMusic = nullptr;
 
-	//InputHandler* inputhandler = nullptr;
+	InputHandler* inputhandler = nullptr;
 
 	Game* game = nullptr;
     Button* button = nullptr;
@@ -76,6 +76,6 @@ private:
 
 	bool running = true;
 
-	bool gameOverMusicPlaying = false;
+	//bool gameOverMusicPlaying = false;
 };
 

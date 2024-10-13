@@ -32,5 +32,5 @@ private:
 	Button* startButton = nullptr;
 	SDL_Texture* startButtonTexture = nullptr;
 	GameState gameState = STATE_MENU;
-	std::<Movement> movement;
+	//std::<Movement> movement;
 };

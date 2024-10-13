@@ -49,10 +49,10 @@ void Game::Destroy()
 	delete startButton;
 }
 
-void Game::Update(const float deltaTime)
-{
-
-}
+//void Game::Update(const float deltaTime)
+//{
+//
+//}
 
 void Game::Render(SDL_Renderer* renderer)
 {
