@@ -79,10 +79,10 @@ void Game::HandleEvents(SDL_Event* handleEvent)
 {
 	if (gameState == STATE_MENU) 
 	{
-		std::cout << "State menu";
+		std::cout << " State menu";
 		if (startButton)
 		{
-			std::cout << "Start button clicked";
+			std::cout << " Start button clicked";
 			gameState = STATE_PLAYING;
 		}
 	}
@@ -95,4 +95,13 @@ void Game::DrawFrame(SDL_Renderer* renderer)
 	SDL_SetRenderDrawColor(renderer, 255, 100, 200, 255);
 	SDL_Rect frameRect = { 60, 80, application->GetWindow()->GetWidth() - 120, application->GetWindow()->GetHeight() - 120 };
 	SDL_RenderDrawRect(renderer, &frameRect);
+}
+
+void Game::RPS_Movement(Movement* movementRenderer)
+{
+	if (gameState == STATE_PLAYING)
+	{
+		std::cout << " State Playing";
+		rockTexture = application->GetTextureHandler()->CreateTexture("Assets/Textures/rock.png");
+	}
 }

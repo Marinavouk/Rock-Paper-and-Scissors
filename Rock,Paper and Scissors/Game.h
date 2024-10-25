@@ -24,6 +24,7 @@ public:
 	void Render(SDL_Renderer* renderer);
 	void HandleEvents(SDL_Event* handleEvent);
 	void DrawFrame(SDL_Renderer* renderer);
+	void RPS_Movement(Movement* movementRenederer);
 
 private:
 
@@ -32,5 +33,6 @@ private:
 	Button* startButton = nullptr;
 	SDL_Texture* startButtonTexture = nullptr;
 	GameState gameState = STATE_MENU;
+	SDL_Texture* rockTexture = nullptr;
 	//std::<Movement> movement;
 };
